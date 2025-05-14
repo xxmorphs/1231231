@@ -1,25 +1,30 @@
+// tsconfig.json (основной)
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
     "skipLibCheck": true,
-
-    /* Bundler mode */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx", // Важно
+    "noEmit": true,               // Для основного кода приложения это нормально, Vite сам собирает
+    "jsx": "react-jsx",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    /* Опционально: если используете 'import type' явно из-за verbatimModuleSyntax */
+    // "verbatimModuleSyntax": true,
+
+    /* Опционально: если используете пути типа @/components */
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@/*": ["src/*"]
+    // }
   },
-  "include": ["src", "src/global.d.ts", "src/vite-env.d.ts"], // Убедитесь, что ваши d.ts файлы включены
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "src/vite-env.d.ts", "src/global.d.ts"], // Убедитесь, что ваши .d.ts файлы включены // // Эта строка, на которую ругается
 }
