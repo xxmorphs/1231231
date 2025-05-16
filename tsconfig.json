@@ -1,9 +1,8 @@
-// tsconfig.json (основной)
 {
   "compilerOptions": {
     "target": "ESNext",
-    "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "useDefineForClassFields": true,
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -14,17 +13,18 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,               // Для основного кода приложения это нормально, Vite сам собирает
-    "jsx": "react-jsx",
-
-    /* Опционально: если используете 'import type' явно из-за verbatimModuleSyntax */
-    // "verbatimModuleSyntax": true,
-
-    /* Опционально: если используете пути типа @/components */
-    // "baseUrl": ".",
-    // "paths": {
-    //   "@/*": ["src/*"]
-    // }
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["src", "src/vite-env.d.ts", "src/global.d.ts"], // Убедитесь, что ваши .d.ts файлы включены // // Эта строка, на которую ругается
+  "include": [
+    "src",
+    "src/vite-env.d.ts",
+    "src/global.d.ts",
+    "src/custom.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

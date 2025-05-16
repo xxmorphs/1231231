@@ -4,8 +4,8 @@ import { useTelegram } from '../../hooks/useTelegram';
 
 // ВАЖНО: Убедитесь, что эти SVG файлы есть в src/assets/flags/
 // и что vite-plugin-svgr настроен
+import { ReactComponent as AzFlag } from '/src/assets/flags/az.svg';
 import { ReactComponent as UzFlag } from '../../assets/flags/uz.svg';
-import { ReactComponent as AzFlag } from '../../assets/flags/az.svg';
 import { ReactComponent as TrFlag } from '../../assets/flags/tr.svg';
 import { ReactComponent as PtFlag } from '../../assets/flags/pt.svg';
 import { ReactComponent as SaFlag } from '../../assets/flags/sa.svg';

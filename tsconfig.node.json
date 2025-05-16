@@ -1,25 +1,22 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
+    "composite": true,
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "module": "ESNext",
+    "moduleResolution": "bundler", // или "NodeNext"
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // Рекомендуется
+    // "noEmit": false, // УБЕДИТЕСЬ, ЧТО ЭТОЙ СТРОКИ НЕТ, или она false. НЕ true.
+    "target": "ESNext", // Или версия Node.js, которую вы используете
+    "outDir": "dist/node_generated", // Пример, если нужно видеть результат компиляции
+    "declaration": true, // Важно для composite
+    "declarationMap": true, // Полезно для composite
+    "sourceMap": true // Полезно для отладки
+    
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "vite.config.ts"
+    // Добавьте сюда другие файлы, которые должны компилироваться этой конфигурацией,
+    // например, если у вас есть скрипты или серверный код.
+  ]
 }
