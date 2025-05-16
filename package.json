@@ -12,7 +12,6 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@twa-dev/sdk": "^8.0.2",
-    "@types/telegram-web-app": "^7.10.1",
     "app": "^0.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
